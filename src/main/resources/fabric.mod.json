@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "tooltiptoggle",
+	"version": "${version}",
+	"name": "TooltipToggle",
+	"description": "lets you toggle tooltip rendering",
+	"authors": [
+		"awakaxis"
+	],
+	"contact": {
+		"discord": "@awakaxis"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/tooltiptoggle/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"net.awakaxis.client.TooltipToggleClient"
+		]
+	},
+	"mixins": [
+		"tooltiptoggle-client.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
