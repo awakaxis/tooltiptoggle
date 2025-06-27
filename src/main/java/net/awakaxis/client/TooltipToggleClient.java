@@ -3,6 +3,7 @@ package net.awakaxis.client;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.resources.ResourceLocation;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +12,7 @@ public class TooltipToggleClient implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
     private static boolean renderTooltips = true;
+    private static boolean displayDiffs = false;
 
     public static ResourceLocation id(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
@@ -22,6 +24,14 @@ public class TooltipToggleClient implements ClientModInitializer {
 
     public static void toggleTooltips() {
         renderTooltips = !renderTooltips;
+    }
+
+    public static boolean doDisplayDiffs() {
+        return displayDiffs;
+    }
+
+    public static void toggleDiffs() {
+        displayDiffs = !displayDiffs;
     }
 
     @Override

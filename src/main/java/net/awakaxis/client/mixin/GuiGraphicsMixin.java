@@ -17,8 +17,10 @@ import java.util.List;
 @Mixin(GuiGraphics.class)
 public abstract class GuiGraphicsMixin {
 
-    @Inject(method="renderTooltipInternal", at = @At("HEAD"), cancellable = true)
-    private void onRenderTooltipInternal(Font font, List<ClientTooltipComponent> list, int i, int j, ClientTooltipPositioner clientTooltipPositioner, @Nullable ResourceLocation resourceLocation, CallbackInfo ci) {
+    @Inject(method = "renderTooltipInternal", at = @At("HEAD"), cancellable = true)
+    private void onRenderTooltipInternal(Font font, List<ClientTooltipComponent> list, int i, int j,
+            ClientTooltipPositioner clientTooltipPositioner, @Nullable ResourceLocation resourceLocation,
+            CallbackInfo ci) {
         if (!TooltipToggleClient.doRenderTooltips()) {
             ci.cancel();
         }
